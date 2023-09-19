@@ -14,6 +14,9 @@ namespace HomeAppliancesCost.StepDefinitions
         {
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
+            driver.Navigate().GoToUrl("https://www.citizensadvice.org.uk/");
+            driver.FindElement(By.XPath("//*[@id=\"home-extent-popup\"]/div/div/a[1]")).Click();
+            Thread.Sleep(2000);
         }
 
         [When(@"I add the list appliances Electric blanket and its average usage and the national average rate")]
