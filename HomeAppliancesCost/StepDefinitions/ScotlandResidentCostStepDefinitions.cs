@@ -49,6 +49,60 @@ namespace HomeAppliancesCost.StepDefinitions
             driver.FindElement(By.XPath("//*[@id=\"submit\"]")).Click();
         }
 
+        [When(@"I add the list appliances Broadband router and its average usage and the national average rates")]
+        public void WhenIAddTheListAppliancesBroadbandRouterAndItsAverageUsageAndTheNationalAverageRates()
+        {
+            SelectElement appliance = new SelectElement(driver.FindElement(By.XPath("//*[@id=\"appliance\"]")));
+            appliance.SelectByText("Broadband router");
+            driver.FindElement(By.XPath("//*[@id=\"hours\"]")).SendKeys("" + 45);
+            driver.FindElement(By.XPath("//*[@id=\"mins\"]")).SendKeys("" + 20);
+            SelectElement frequency = new SelectElement(driver.FindElement(By.XPath("//*[@id=\"frequency\"]")));
+            frequency.SelectByValue("week");
+            driver.FindElement(By.XPath("//*[@id=\"kwhcost\"]")).SendKeys("" + 67);
+            driver.FindElement(By.XPath("//*[@id=\"submit\"]")).Click();
+        }
+
+
+        [When(@"I add the list appliances Games console and its average usage and the national average rates")]
+        public void WhenIAddTheListAppliancesGamesConsoleAndItsAverageUsageAndTheNationalAverageRates()
+        {
+            SelectElement appliance = new SelectElement(driver.FindElement(By.XPath("//*[@id=\"appliance\"]")));
+            appliance.SelectByText("Games console");
+            driver.FindElement(By.XPath("//*[@id=\"hours\"]")).SendKeys("" + 2);
+            driver.FindElement(By.XPath("//*[@id=\"mins\"]")).SendKeys("" + 15);
+            SelectElement frequency = new SelectElement(driver.FindElement(By.XPath("//*[@id=\"frequency\"]")));
+            frequency.SelectByValue("day");
+            driver.FindElement(By.XPath("//*[@id=\"kwhcost\"]")).SendKeys("" + 67);
+            driver.FindElement(By.XPath("//*[@id=\"submit\"]")).Click();
+        }
+
+        [When(@"I add the list appliances PC or desktop computer and its average usage and the national average rates")]
+        public void WhenIAddTheListAppliancesPCOrDesktopComputerAndItsAverageUsageAndTheNationalAverageRates()
+        {
+            SelectElement appliance = new SelectElement(driver.FindElement(By.XPath("//*[@id=\"appliance\"]")));
+            appliance.SelectByText("PC or desktop computer");
+            driver.FindElement(By.XPath("//*[@id=\"hours\"]")).SendKeys("" + 40);
+            driver.FindElement(By.XPath("//*[@id=\"mins\"]")).SendKeys("" + 30);
+            SelectElement frequency = new SelectElement(driver.FindElement(By.XPath("//*[@id=\"frequency\"]")));
+            frequency.SelectByValue("week");
+            driver.FindElement(By.XPath("//*[@id=\"kwhcost\"]")).SendKeys("" + 67);
+            driver.FindElement(By.XPath("//*[@id=\"submit\"]")).Click();
+        }
+
+
+        [When(@"I add the list appliances Dehumidifier and its average usage and the national average rates")]
+        public void WhenIAddTheListAppliancesDehumidifierAndItsAverageUsageAndTheNationalAverageRates()
+        {
+            SelectElement appliance = new SelectElement(driver.FindElement(By.XPath("//*[@id=\"appliance\"]")));
+            appliance.SelectByText("Dehumidifier");
+            driver.FindElement(By.XPath("//*[@id=\"hours\"]")).SendKeys("" + 30);
+            driver.FindElement(By.XPath("//*[@id=\"mins\"]")).SendKeys("" + 20);
+            SelectElement frequency = new SelectElement(driver.FindElement(By.XPath("//*[@id=\"frequency\"]")));
+            frequency.SelectByValue("week");
+            driver.FindElement(By.XPath("//*[@id=\"kwhcost\"]")).SendKeys("" + 67);
+            driver.FindElement(By.XPath("//*[@id=\"submit\"]")).Click();
+        }
+
         [Then(@"I should get the results table with daily, weekly, monthly, and yearly costs")]
         public void ThenIShouldGetTheResultsTableWithDailyWeeklyMonthlyAndYearlyCosts()
         {
