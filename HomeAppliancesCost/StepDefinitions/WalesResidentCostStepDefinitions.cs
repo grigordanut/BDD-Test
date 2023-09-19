@@ -1,7 +1,8 @@
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 using System;
-using System.Threading;
 using TechTalk.SpecFlow;
 
 namespace HomeAppliancesCost.StepDefinitions
@@ -99,7 +100,7 @@ namespace HomeAppliancesCost.StepDefinitions
             Thread.Sleep(3000);
             driver.FindElement(By.XPath("//*[@id=\"reset\"]")).Click();
             driver.SwitchTo().Alert().Accept();
-            driver.Quit()
+            driver.Quit();
         }
     }
 }
