@@ -1,3 +1,5 @@
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using System;
 using TechTalk.SpecFlow;
 
@@ -6,10 +8,12 @@ namespace HomeAppliancesCost.StepDefinitions
     [Binding]
     public class EnglandResidentCostStepDefinitions
     {
+        IWebDriver driver;
         [Given(@"I am a resident from England")]
         public void GivenIAmAResidentFromEngland()
         {
-            throw new PendingStepException();
+            driver = new ChromeDriver();
+            driver.Manage().Window.Maximize();
         }
 
         [When(@"I add the list appliances Electric blanket and its average usage and the national average rate")]
