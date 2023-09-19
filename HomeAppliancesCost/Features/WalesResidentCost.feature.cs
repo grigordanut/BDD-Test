@@ -76,10 +76,16 @@ namespace HomeAppliancesCost.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("As a resident from Wales I need to know estimate of how much electrical appliance" +
             "s cost to run")]
-        public virtual void AsAResidentFromWalesINeedToKnowEstimateOfHowMuchElectricalAppliancesCostToRun()
+        [NUnit.Framework.TestCaseAttribute("Immersion heater", null)]
+        [NUnit.Framework.TestCaseAttribute("Broadband router", null)]
+        [NUnit.Framework.TestCaseAttribute("Washing machine", null)]
+        [NUnit.Framework.TestCaseAttribute("Microwave", null)]
+        [NUnit.Framework.TestCaseAttribute("Slow cooker", null)]
+        public virtual void AsAResidentFromWalesINeedToKnowEstimateOfHowMuchElectricalAppliancesCostToRun(string aplianceName, string[] exampleTags)
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("aplianceName", aplianceName);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a resident from Wales I need to know estimate of how much electrical appliance" +
                     "s cost to run", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 5
@@ -106,8 +112,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("I am a resident from Wales", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 7
- testRunner.When("I add the list appliance <aplianceName> and its average usage and the national av" +
-                        "erage rates", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("I add the list appliance {0} and its average usage and the national average rates" +
+                            "", aplianceName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 8
  testRunner.Then("I should get the results table with daily, weekly, monthly, and yearly costs is", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

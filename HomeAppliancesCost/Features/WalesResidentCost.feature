@@ -6,3 +6,12 @@ Scenario Outline: As a resident from Wales I need to know estimate of how much e
 	Given I am a resident from Wales
 	When I add the list appliance <aplianceName> and its average usage and the national average rates
 	Then I should get the results table with daily, weekly, monthly, and yearly costs is
+
+	Examples: 
+
+	| aplianceName     |
+	| Immersion heater |
+	| Broadband router |
+	| Washing machine  |
+	| Microwave        |
+	| Slow cooker      |
