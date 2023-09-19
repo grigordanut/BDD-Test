@@ -76,10 +76,21 @@ namespace HomeAppliancesCost.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("As a resident from Scotland I need to know estimate of how much electrical applia" +
             "nces cost to run")]
-        public virtual void AsAResidentFromScotlandINeedToKnowEstimateOfHowMuchElectricalAppliancesCostToRun()
+        [NUnit.Framework.TestCaseAttribute("Electric blanket", null)]
+        [NUnit.Framework.TestCaseAttribute("Fan heater", null)]
+        [NUnit.Framework.TestCaseAttribute("Broadband router", null)]
+        [NUnit.Framework.TestCaseAttribute("Games console", null)]
+        [NUnit.Framework.TestCaseAttribute("PC or desktop computer", null)]
+        [NUnit.Framework.TestCaseAttribute("Dehumidifier", null)]
+        [NUnit.Framework.TestCaseAttribute("Dishwasher", null)]
+        [NUnit.Framework.TestCaseAttribute("Oven", null)]
+        [NUnit.Framework.TestCaseAttribute("Iron", null)]
+        [NUnit.Framework.TestCaseAttribute("Vacuum cleaner", null)]
+        public virtual void AsAResidentFromScotlandINeedToKnowEstimateOfHowMuchElectricalAppliancesCostToRun(string apliancenames, string[] exampleTags)
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("apliancenames", apliancenames);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a resident from Scotland I need to know estimate of how much electrical applia" +
                     "nces cost to run", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 5
@@ -106,8 +117,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("I am a resident from Scotland", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 7
- testRunner.When("I add the list appliances <apliancenames> and its average usage and the national " +
-                        "average rates", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("I add the list appliances {0} and its average usage and the national average rate" +
+                            "s", apliancenames), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 8
  testRunner.Then("I should get the results table with daily, weekly, monthly, and yearly costs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

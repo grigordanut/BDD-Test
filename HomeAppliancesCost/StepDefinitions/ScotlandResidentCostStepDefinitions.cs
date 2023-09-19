@@ -1,5 +1,6 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 using System;
 using TechTalk.SpecFlow;
 
@@ -25,7 +26,27 @@ namespace HomeAppliancesCost.StepDefinitions
         [When(@"I add the list appliances Electric blanket and its average usage and the national average rates")]
         public void WhenIAddTheListAppliancesElectricBlanketAndItsAverageUsageAndTheNationalAverageRates()
         {
-            throw new PendingStepException();
+            SelectElement appliance = new SelectElement(driver.FindElement(By.XPath("//*[@id=\"appliance\"]")));
+            appliance.SelectByText("Electric blanket");
+            driver.FindElement(By.XPath("//*[@id=\"hours\"]")).SendKeys("" + 1);
+            driver.FindElement(By.XPath("//*[@id=\"mins\"]")).SendKeys("" + 45);
+            SelectElement frequency = new SelectElement(driver.FindElement(By.XPath("//*[@id=\"frequency\"]")));
+            frequency.SelectByValue("day");
+            driver.FindElement(By.XPath("//*[@id=\"kwhcost\"]")).SendKeys("67");
+            driver.FindElement(By.XPath("//*[@id=\"submit\"]")).Click();
+        }
+
+        [When(@"I add the list appliances Fan heater and its average usage and the national average rates")]
+        public void WhenIAddTheListAppliancesFanHeaterAndItsAverageUsageAndTheNationalAverageRates()
+        {
+            SelectElement appliance = new SelectElement(driver.FindElement(By.XPath("//*[@id=\"appliance\"]")));
+            appliance.SelectByText("Fan heater");
+            driver.FindElement(By.XPath("//*[@id=\"hours\"]")).SendKeys("" + 2);
+            driver.FindElement(By.XPath("//*[@id=\"mins\"]")).SendKeys("" + 30);
+            SelectElement frequency = new SelectElement(driver.FindElement(By.XPath("//*[@id=\"frequency\"]")));
+            frequency.SelectByValue("day");
+            driver.FindElement(By.XPath("//*[@id=\"kwhcost\"]")).SendKeys("" + 67);
+            driver.FindElement(By.XPath("//*[@id=\"submit\"]")).Click();
         }
 
         [Then(@"I should get the results table with daily, weekly, monthly, and yearly costs")]
