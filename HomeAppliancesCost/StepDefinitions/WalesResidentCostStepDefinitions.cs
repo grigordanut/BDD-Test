@@ -1,6 +1,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
+using System.Threading;
 using TechTalk.SpecFlow;
 
 namespace HomeAppliancesCost.StepDefinitions
@@ -74,6 +75,18 @@ namespace HomeAppliancesCost.StepDefinitions
             driver.FindElement(By.XPath("//*[@id=\"submit\"]")).Click();
         }
 
+        [When(@"I add the list appliance Slow cooker and its average usage and the national average rates")]
+        public void WhenIAddTheListApplianceSlowCookerAndItsAverageUsageAndTheNationalAverageRates()
+        {
+            SelectElement appliance = new SelectElement(driver.FindElement(By.XPath("//*[@id=\"appliance\"]")));
+            appliance.SelectByText("Slow cooker");
+            driver.FindElement(By.XPath("//*[@id=\"hours\"]")).SendKeys("" + 50);
+            driver.FindElement(By.XPath("//*[@id=\"mins\"]")).SendKeys("" + 30);
+            SelectElement frequency = new SelectElement(driver.FindElement(By.XPath("//*[@id=\"frequency\"]")));
+            frequency.SelectByValue("week");
+            driver.FindElement(By.XPath("//*[@id=\"kwhcost\"]")).SendKeys("" + 67);
+            driver.FindElement(By.XPath("//*[@id=\"submit\"]")).Click();
+        }
 
         [Then(@"I should get the results table with daily, weekly, monthly, and yearly costs is")]
         public void ThenIShouldGetTheResultsTableWithDailyWeeklyMonthlyAndYearlyCostsIs()
