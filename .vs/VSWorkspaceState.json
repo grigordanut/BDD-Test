@@ -2,9 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\HomeAppliancesCost",
-    "\\HomeAppliancesCost\\Features",
-    "\\HomeAppliancesCost\\StepDefinitions"
+    "\\HomeAppliancesCost\\Features"
   ],
-  "SelectedNode": "\\HomeAppliancesCost.sln",
   "PreviewInSolutionExplorer": false
 }
