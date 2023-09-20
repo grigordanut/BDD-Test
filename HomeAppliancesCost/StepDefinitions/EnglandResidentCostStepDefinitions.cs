@@ -4,6 +4,7 @@ using System;
 using TechTalk.SpecFlow;
 using OpenQA.Selenium.Support.UI;
 using NUnit.Framework;
+using OpenQA.Selenium.Edge;
 
 namespace HomeAppliancesCost.StepDefinitions
 {
@@ -15,6 +16,7 @@ namespace HomeAppliancesCost.StepDefinitions
         public void GivenIAmAResidentFromEngland()
         {
             driver = new ChromeDriver();
+            //driver = new EdgeDriver();
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl("https://www.citizensadvice.org.uk/");
             driver.FindElement(By.XPath("//*[@id=\"home-extent-popup\"]/div/div/a[1]")).Click();

@@ -69,6 +69,10 @@
               "target": "Package",
               "version": "[117.0.5938.8800, )"
             },
+            "Selenium.WebDriver.MSEdgeDriver": {
+              "target": "Package",
+              "version": "[115.0.1901.200, )"
+            },
             "SpecFlow.NUnit": {
               "target": "Package",
               "version": "[3.9.40, )"

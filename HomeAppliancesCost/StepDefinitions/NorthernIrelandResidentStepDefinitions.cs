@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Edge;
 using System;
 using TechTalk.SpecFlow;
 
@@ -14,6 +15,7 @@ namespace HomeAppliancesCost.StepDefinitions
         public void GivenIAmAResidentFromNorthernIreland()
         {
             driver = new ChromeDriver();
+            //driver = new EdgeDriver();
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl("https://www.citizensadvice.org.uk/");
         }
