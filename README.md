@@ -1,4 +1,4 @@
-# SSEAIRTRICITY
+# BDD-Test
 
 The test project was built to check the estimated cost of electric appliances for people from:
 - England
